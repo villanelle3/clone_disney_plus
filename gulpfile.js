@@ -1,4 +1,4 @@
-var gulp = require("gulp"), sass = require("gulp-sass")(require("sass"))
+var gulp = require("gulp"), sass = require("gulp-sass")(require("sass")), imagemin = require("gulp-imagemin")
 
 var paths = {
     styles: {
@@ -14,7 +14,12 @@ function style() {
         .pipe(gulp.dest(paths.styles.dest))
 }
 
-exports.default = style
+
+function images(){
+    return gulp.src("./src/images/**/*").pipe(imagemin()).pipe(gulp.dest("./dist/images"))
+}
+
+exports.default = gulp.parallel(style, images)
 
 function watch() {
     gulp.watch(paths.styles.src, gulp.parallel(style));
