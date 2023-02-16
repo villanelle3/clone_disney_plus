@@ -1,15 +1,19 @@
 @import "reset";
 @import "_hero";
+@import "_shows";
+
 @font-face {
     font-family: Avenir;
     src: url(../../fonts/Avenir-Regular.woff2);
     font-weight: 400;
 }
+
 @font-face {
     font-family: Avenir;
     src: url(../../fonts/Avenir-Bold.woff2);
     font-weight: 700;
 }
+
 $cordefundo: #040714;
 $cortextoprincipal: silver;
 $cortextosecundario: #f9f9f9;
@@ -25,9 +29,12 @@ $cortextosecundario: #f9f9f9;
     color: $cortextosecundario;
 }
 
+*{
+    font-family: Avenir, sans-serif;
+}
+
 body{
     background-color: $cordefundo;
-    font-family: Avenir, sans-serif;
 }
 
 .text--big{
